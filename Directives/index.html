@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <title>Directive HTML App</title>
+    <link rel="icon" href="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+
+    <script src="components/modules.js"></script>
+    <script src="components/movies/movieList-controller.js"></script>
+    <script src="components/shared/rating/rating-controller.js"></script>
+    <script src="components/shared/rating/rating-directive.js"></script>
+</head>
+<body ng-controller="movieList" class="container">
+    <h1>Movies</h1>
+    <div class="media" ng-repeat="movie in movies | orderBy : 'year'">
+        <span class="media-left">
+            <img src="//placehold.it/75x100" alt="{{movie.title}}" />
+        </span>
+        <div class="media-body">
+            <h4 class="media-heading">
+                {{movie.title}} ({{movie.year}})
+            </h4>
+            <rating rating-value="movie.rating" rating-max="5"></rating>
+            <span class="badge badge-info">
+                {{movie.rating}}/5
+            </span>
+        </div>
+    </div>
+</body>
+</html>

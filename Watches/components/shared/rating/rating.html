@@ -1,0 +1,5 @@
+﻿<span>
+    <span ng-repeat="star in vm.stars track by $index" ng-click="vm.ratingValue = $index + 1" ng-mouseenter="vm.updateValue($index + 1)" ng-mouseleave="vm.updateValue(vm.ratingValue)">
+        <i class="fa" ng-class="{'fa-star': star, 'fa-star-o': !star}"></i>
+    </span>
+</span>

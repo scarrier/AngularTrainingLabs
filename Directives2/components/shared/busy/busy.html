@@ -1,0 +1,18 @@
+﻿<div style="position: relative;">
+    <div ng-show="isBusy" style="position: absolute;
+                z-index: 2;
+                width: 100%;
+                height: 100%;
+                padding: 20px;">
+        <div class="fa-2x text-center text-info">
+            <i class="fa fa-spin fa-spinner"></i> <span>{{message}}</span>
+        </div>
+    </div>
+    <div style="z-index: 1;" ng-style="{
+         'display':(isBusy && behavior === 'no-display' ? 'none' : 'block'),
+         'visibility': (isBusy && behavior === 'hidden' ? 'hidden' : 'visible'),
+         'opacity': (isBusy && behavior === 'visible' ? .4 : 1)
+         }">
+        <div ng-transclude ></div>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <title>TypeScript HTML App</title>
+    <link rel="icon" href=""/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.4.8/angular-messages.js"></script>
+    <script src="components/myApp.js"></script>
+</head>
+<body class="container">
+    <form name="userForm" ng-controller="helloWorld" novalidate>
+        <h1>Hello World</h1>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        User information
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group" ng-class="{'has-error':userForm.name.$invalid && userForm.name.$touched}">
+                            <label for="name">
+                                Name
+                            </label>
+                            <input type="text"
+                                   id="name"
+                                   class="form-control"
+                                   ng-model="user.name"
+                                   name="name" 
+                                   ng-required="true"
+                                   ng-pattern="/^[A-z \-\.]+$/"/>
+                            <div class="help-block" ng-messages="userForm.name.$error" ng-show="userForm.name.$touched">
+                                <p ng-message="required">Name is required</p>
+                                <p ng-message="pattern">Name is invalid</p>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{'has-error':userForm.email.$invalid && userForm.email.$touched}">
+                            <label for="email">
+                                Email
+                            </label>
+                            <input type="email"
+                                   id="email"
+                                   class="form-control"
+                                   ng-model="user.email"
+                                   name="email" 
+                                   ng-required="true"/>
+                            <div class="help-block" ng-messages="userForm.email.$error" ng-show="userForm.email.$touched">
+                                <p ng-message="required">Email is required</p>
+                                <p ng-message="email">Email is invalid</p>
+                            </div>
+                        </div>          
+                        <div class="form-group">
+                            <label for="isManager">
+                                <input type="checkbox"
+                                       id="isManager"
+                                       ng-model="user.isManager"
+                                       name="isManager" />
+                                Is Manager
+                            </label>
+                        </div>       
+                        <div class="form-group">
+                            <label for="departmentId">
+                                Department Id
+                            </label>
+                            <select type="text"
+                                   id="departmentId"
+                                   class="form-control"
+                                    name="departmentId"
+                                   ng-model="user.departmentId" ng-options="x.id as x.name for x in departments">
+                                <option value="">Select a Department</option>
+                            </select>
+                        </div>      
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" value="Submit" class="btn btn-lg btn-block btn-success" ng-disabled="userForm.$invalid" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-info">
+                        Phone Numbers
+                    </li>
+                    <li class="list-group-item" ng-repeat="phone in user.phoneNumbers">
+                        {{phone.number}}
+                        <span class="badge" ng-bind="phone.type"></span>
+                    </li>
+                </ul>
+                <pre>{{user|json}}</pre>
+            </div>
+        </div> 
+     </form>
+</body>
+</html>

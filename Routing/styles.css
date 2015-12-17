@@ -1,0 +1,23 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+header {
+    padding: 10px;
+    border-bottom: solid 2px black;
+}
+
+aside {
+    min-height: 100% !important;
+    padding: 10px;
+    width: 200px;
+    background-color: #EEE;
+    float: left;
+}
+
+main {
+    min-height: 100% !important;
+    padding: 10px;    
+    float: left;
+}
