@@ -1,0 +1,22 @@
+[  
+   {  
+      "itemId":1,
+      "name":"Foo (12 pack)",
+      "price":12.99
+   },
+   {  
+      "itemId":2,
+      "name":"Bag o'' Bar",
+      "price":19.99
+   },
+   {  
+      "itemId":3,
+      "name":"Foo + Bar Combo",
+      "price":25.99
+   },
+   {  
+      "itemId":4,
+      "name":"Baz - New & Improved!",
+      "price":10.99
+   }
+]

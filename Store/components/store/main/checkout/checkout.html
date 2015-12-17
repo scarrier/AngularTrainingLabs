@@ -1,0 +1,67 @@
+<h2>Checkout</h2>
+<form name="myForm" role="form" novalidate>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            User information
+        </div>
+        <div class="panel-body">
+            <div class="form-group" ng-class="{'has-error':myForm.fullName.$invalid && myForm.fullName.$touched}">
+
+                <label for="fullName">
+                    Full name
+                </label>
+
+                <input type="text"
+                       id="fullName"
+                       name="fullName"
+                       placeholder="Full name"
+                       class="form-control"
+                       ng-required="true"
+                       ng-pattern="/^[A-z \-\.]+$/"
+                       ng-model="checkout.user.fullName"/>
+
+                <div class="help-block" ng-messages="myForm.fullName.$error" ng-show="myForm.fullName.$touched">
+                    <p ng-message="required">
+                        <i class="fa fa-warning"></i>
+                        Full name is a required field.
+                    </p>
+                    <p ng-message="pattern">
+                        <i class="fa fa-warning"></i>
+                        Full name is not valid.
+                    </p>
+                </div>
+
+            </div>
+            <div class="form-group" ng-class="{'has-error':myForm.email.$invalid && myForm.email.$touched}">
+
+                <label for="email">
+                    Email
+                </label>
+                <input type="email"
+                       id="email"
+                       name="email"
+                       placeholder="Email"
+                       class="form-control" 
+                       ng-required="true"
+                       ng-model="checkout.user.email"/>
+
+                <div class="help-block" ng-messages="myForm.email.$error" ng-show="myForm.email.$touched">
+                    <p ng-message="required">
+                        <i class="fa fa-warning"></i>
+                        Email is a required field.
+                    </p>
+                    <p ng-message="email">
+                        <i class="fa fa-warning"></i>
+                        Email is not valid.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-success btn-large btn-block" ng-disabled="myForm.$invalid" ng-click="checkout.checkout()">
+            Continue
+        </button>        
+    </div>
+</form>

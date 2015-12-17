@@ -1,0 +1,13 @@
+<ul class="list-group">
+    <li class="list-group-item list-group-item-info lead">
+        Sale Items
+    </li>
+    <li class="list-group-item" ng-repeat="item in aside.items">
+        <a ui-sref="itemDetail({itemId: {{item.itemId}}})" href="">
+            {{item.name}}
+            <span class="badge badge-info pull-right">
+                {{item.price|currency}}
+            </span>
+        </a>
+    </li>
+</ul>

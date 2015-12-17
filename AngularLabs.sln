@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Watches", "Watches\Watches.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Directives2", "Directives2\Directives2.csproj", "{7D0E5902-640F-415F-B9D2-E675C65FBD11}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Store", "Store\Store.csproj", "{7DCC01AA-5099-4A97-8DBD-904F6437A12E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{7D0E5902-640F-415F-B9D2-E675C65FBD11}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D0E5902-640F-415F-B9D2-E675C65FBD11}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D0E5902-640F-415F-B9D2-E675C65FBD11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DCC01AA-5099-4A97-8DBD-904F6437A12E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DCC01AA-5099-4A97-8DBD-904F6437A12E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DCC01AA-5099-4A97-8DBD-904F6437A12E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DCC01AA-5099-4A97-8DBD-904F6437A12E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

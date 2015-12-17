@@ -1,0 +1,48 @@
+<h2>My Cart</h2>
+<div ng-switch="cart.cart.length">
+    <div ng-switch-default>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Quantity</th>
+                    <th>Item</th>
+                    <th class="text-right">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="cartItem in cart.cart">
+                    <td>
+                        <input style="width: 50px;"
+                               type="number" ng-model="cartItem.quantity" ng-change="cart.updateQuantity(cartItem.item.itemId, cartItem.quantity)"/>
+                    </td>
+                    <td>
+                        <a href="" ui-sref="itemDetail({itemId: {{cartItem.item.itemId}}})">
+                            {{cartItem.item.name}}
+                            <span class="text-muted">
+                                ({{cartItem.quantity}})
+                            </span>
+                        </a>
+                    </td>
+                    <td class="text-right">
+                        {{cartItem.total|currency}}
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-right">
+                        <strong>Total: {{cart.total|currency}}</strong>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="" ui-sref="checkout" class="btn btn-success btn-lg btn-block">
+            Checkout
+        </a>
+        <button class="btn btn-danger btn-block" ng-click="cart.clearCart()">
+            Clear
+        </button>
+    </div>
+    <div class="alert alert-warning text-center" ng-switch-when="0">
+        <i class="fa fa-warning"></i>
+        No items in cart
+    </div>
+</div>

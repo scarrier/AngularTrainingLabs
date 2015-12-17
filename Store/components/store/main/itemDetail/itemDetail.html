@@ -1,0 +1,27 @@
+<div class="alert alert-info text-center fa-2x" ng-show="itemDetail.loading">
+    <i class="fa fa-spinner fa-spin"></i> &nbsp;Loading...
+</div>
+<div ng-show="!itemDetail.loading">
+    <div class="media">
+        <span class="media-left">
+            <img src="//placehold.it/256x256" />
+        </span>
+        <div class="media-body">
+            <h2 class="media-heading">
+                    {{itemDetail.item.name}}
+            </h2>
+            <span class="label label-warning">Sale</span>
+            &nbsp;
+            {{itemDetail.item.price|currency}}
+        </div>
+        <br />
+        <div>
+            <button class="btn btn-success btn-lg btn-block" ng-click="itemDetail.addToCart()">
+                Add to cart
+            </button>
+            <button class="btn btn-info btn-block" ng-click="itemDetail.goBack()">
+                Back
+            </button>
+        </div>
+    </div>    
+</div>
